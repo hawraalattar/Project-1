@@ -1,18 +1,14 @@
 body {
-  margin: 0;
-  /* background-image: url(' pic/funtasty.png ');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
+  margin: auto;
   background-color: #ff9c5c;
-  color: rgb(88, 57, 40);
+  color: rgb(65, 39, 25);
   height: 100vh;
   width: 70vw;
 }
 
 ol {
   height: inherit;
-  background-color: #f2c7aac2;
+  background-color: #d18553e3;
   border-radius: 10px;
 }
 
@@ -23,15 +19,15 @@ ol {
   font-weight: 700;
   padding: 0.2em 0.2em;
   border-radius: 7px;
-  color: rgb(100, 41, 9);
-  background-color: rgba(140, 112, 96, 0.276);
-  border-color: rgb(100, 41, 9);
+  color: rgb(65, 39, 25);
+  background-color: rgba(109, 90, 78, 0.276);
+  border-color: rgb(65, 39, 25);
   transition: all 0.3s;
   cursor: pointer;
 }
 
 #levels:hover {
   transform: translateY(-10px);
-  background-color: rgb(100, 41, 9);
+  background-color: rgb(65, 39, 25);
   color: aliceblue;
 }

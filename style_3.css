@@ -1,7 +1,38 @@
 body {
-  margin: 0;
+  margin: auto;
   background-color: #ff9c5c;
-  color: rgb(88, 57, 40);
+  color: rgb(65, 39, 25);
   height: 100vh;
   width: 70vw;
+}
+
+#level_1,
+#level_2,
+#level_3 {
+  width: 20vw;
+  height: 5vh;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2em 0.2em;
+  justify-content: center;
+  border-radius: 7px;
+  color: rgb(65, 39, 25);
+  background-color: rgba(155, 97, 64, 0.276);
+  border-color: rgb(100, 41, 9);
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-top: 6vh;
+  margin-left: 6vw;
+}
+
+#level_1:hover,
+#level_2:hover,
+#level_3:hover {
+  transform: translateY(-10px);
+  background-color: rgb(65, 39, 25);
+  color: aliceblue;
+}
+
+#imgs {
+  display: grid;
 }
