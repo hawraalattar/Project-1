@@ -9,50 +9,38 @@ const toppings = [
   { name: 'pasil', imageUrl: 'pic/pasil.png' }
 ]
 
-let reqPizza = null
-
 // Function that generate an array of each topping img
 const toppingsContainer = document.getElementById('toppingsContainer')
-function arrayToppings() {
+function toppingsContainerArray() {
   for (let i = 0; i < toppings.length; i++) {
     let img = document.createElement('img')
     img.src = toppings[i].imageUrl
-    document.body.toppingsContainer.appendChild(img)
-    // toppingsImg.push(toppingsImg.setAttribute('src', toppings[i].imageUrl))
+    toppingsContainer.appendChild(img)
   }
 }
 
 // Function to scatter the toppings randomly
-// function randomToppings() {
-//   toppings.forEach((topping) => {
-//     const randomX = Math.floor(Math.random() * (reqPizza.width - topping.width))
-//     console.log(`topping width +> ${topping.width}`)
-//     console.log(`randomX +> ${randomX}`)
-//     const randomY = Math.floor(
-//       Math.random() * (reqPizza.height - topping.height)
-//     )
+function randomToppings(num) {
+  for (let i = 0; i < num; i++) {
+    const randomIndex = Math.floor(Math.random() * toppings.length)
+  }
 
-//     topping.style.position = 'absolute'
-//     topping.style.left = randomX + 'px'
-//     topping.style.top = randomY + 'px'
-//   })
-// }
+  const playPileImg = document.getElementById('card1')
+  playPileImg.src = currentCard.img
+}
 
 // Start Game
 function startGame() {
   // Add img of the required pizza ingredients by putting plain dough and scattering the topings randomly
   // plain doug img
-  reqPizza = document.createElement('img')
-  reqPizza.setAttribute('src', 'pic/plainpizza.png')
-  document.body.appendChild(reqPizza)
+  const plainPizza = document.getElementById('plainPizza')
+  let plainPizzaImg = document.createElement('img')
+  plainPizzaImg.src = 'pic/plainpizza.png'
+  plainPizza.appendChild(plainPizzaImg)
 
-  // Checking one topping img to be add in html page ///
-  const topping = document.createElement('img')
-  topping.setAttribute('src', toppings[0].imageUrl)
-  document.body.appendChild(topping)
-
-  // add 2 toppings randomly - level 1
-  arrayToppings()
+  // add 2 toppings randomly by calling randomToppings()
+  // randomToppings()
+  toppingsContainerArray()
   // Keep img for specific time and disapear it
 
   // Add plain dough of the pizza and set the toppings beside
