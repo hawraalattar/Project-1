@@ -27,10 +27,10 @@ Pizza-Puzzle Adventure is a game that helps improve concentration and logic skil
 ### **_Getting Started_**
 
 1. Click on Pizza-Puzzle Adventure! button to know the gameplay instructions.
-2. After reading the instruction, press on Get Started button.
+2. After reading the instructions, press on Get Started button.
 3. A three levels will be shown, click on level 1. Thus, the game board will be displayed.
 4. Start by clicking on the puzzle piece that you want to move and drop it in the position you want.
-5. Keep dragging and dropping the puzzle until you achieve the desired pattern puzzle.
+5. Keep dragging and dropping the puzzle pieces until you achieve the desired pattern puzzle.
 6. Once you arrive the correct pattern, a popup message will appear! 🎉🥳🎊
 
 ---
