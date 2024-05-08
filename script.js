@@ -1,9 +1,9 @@
+// / Global var ---
+// No. of rws and coulmns in game board
 let rows = 3
 let columns = 3
 
-let referencePuz
-let swapPuz
-
+// The final pattern of the puzzle
 const finalImgOrder = [
   'http://localhost:5500/puzzle/1.jpg',
   'http://localhost:5500/puzzle/2.jpg',
@@ -15,7 +15,13 @@ const finalImgOrder = [
   'http://localhost:5500/puzzle/8.jpg',
   'http://localhost:5500/puzzle/9.jpg'
 ]
+
+// The puzzle once level one clicked
 let puzzleOrder = ['4', '6', '2', '8', '5', '3', '1', '9', '7']
+
+// Puzzle peices to be draged and droped
+let referencePuz
+let swapPuz
 
 let span = document.getElementsByClassName('close-button')[0]
 
@@ -29,7 +35,7 @@ function showWinMsg() {
   document.getElementById('gameWin').style.display = 'block'
 }
 
-// click on x
+// click on x to close pop-up text msg ---> by changing its display to none
 span.onclick = function () {
   document.getElementById('gameWin').style.display = 'none'
 }
@@ -40,22 +46,19 @@ for (let r = 0; r < rows; r++) {
     // load img in board <img id="r-c"
     let puzzle = document.createElement('img')
     puzzle.id = r.toString() + '-' + c.toString()
-    // for (let i = 0; i < finalImg; i++) {
-    //   puzzle.src = 'puzzle/' + finalImg[i] + '.jpg'
-    //   puzzle.src = 'puzzle/1.jpg'
-    // }
+
     puzzle.src = 'puzzle/' + puzzleOrder.shift() + '.jpg'
 
-    // Allow to drag the puzzle
+    // Append img in div of #board id
+    document.getElementById('board').append(puzzle)
+
+    // Allow to drag and drop the puzzle pieces
     puzzle.addEventListener('dragstart', startDrag)
     puzzle.addEventListener('dragover', moveArround)
-    puzzle.addEventListener('dragenter', swaps)
+    puzzle.addEventListener('dragenter', enter)
     puzzle.addEventListener('dragleave', leave)
     puzzle.addEventListener('drop', dropPuz)
     puzzle.addEventListener('dragend', dragEnd)
-
-    // Append
-    document.getElementById('board').append(puzzle)
   }
 }
 
@@ -69,8 +72,8 @@ function moveArround(move) {
 }
 
 // To swap puzzle between each other
-function swaps(swap) {
-  swap.preventDefault()
+function enter(e) {
+  e.preventDefault()
 }
 
 function leave() {}
@@ -79,6 +82,8 @@ function leave() {}
 function dropPuz() {
   swapPuz = this
 }
+
+// End the drag event
 function dragEnd() {
   let currentPuz = referencePuz.src
   let swappedPuz = swapPuz.src
@@ -86,6 +91,7 @@ function dragEnd() {
   referencePuz.src = swappedPuz
   swapPuz.src = currentPuz
 
+  // After each dragEnd event finished check if win
   if (checkWin()) {
     showWinMsg()
   }
