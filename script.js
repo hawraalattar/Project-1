@@ -17,9 +17,21 @@ const finalImgOrder = [
 ]
 let puzzleOrder = ['4', '6', '2', '8', '5', '3', '1', '9', '7']
 
+let span = document.getElementsByClassName('close-button')[0]
+
 // Start the game by showing the board ---> change display to flex
 function startGame() {
   document.getElementById('board').style.display = 'flex'
+}
+
+// After final order acheived show popup msg
+function showWinMsg() {
+  document.getElementById('gameWin').style.display = 'block'
+}
+
+// click on x
+span.onclick = function () {
+  document.getElementById('gameWin').style.display = 'none'
 }
 
 // Loading the puzzle board
@@ -73,6 +85,10 @@ function dragEnd() {
 
   referencePuz.src = swappedPuz
   swapPuz.src = currentPuz
+
+  if (checkWin()) {
+    showWinMsg()
+  }
 }
 
 // Function to check win
@@ -82,7 +98,6 @@ function checkWin() {
   for (let i = 0; i < playerBoard.length; i++) {
     playerOrder.push(playerBoard[i].src)
   }
-  console.log(playerOrder)
   // for loop
   for (let index = 0; index < playerOrder.length; index++) {
     // if two elements are not equal return a value of false
