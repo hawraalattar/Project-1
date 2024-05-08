@@ -41,11 +41,14 @@ function moveArround(move) {
   move.preventDefault()
 }
 
+// To swap puzzle between each other
 function swaps(swap) {
   swap.preventDefault()
 }
+
 function leave() {}
 
+// Drop the puzzle
 function dropPuz() {
   swapPuz = this
 }
@@ -56,3 +59,15 @@ function dragEnd() {
   referencePuz.src = swappedPuz
   swapPuz.src = currentPuz
 }
+
+// Function to check win
+function checkWin() {
+  let playerBoard = document.getElementById('board')
+  let playerOrder = []
+  for (let i = 0; i < playerBoard.length; i++) {
+    playerOrder.push(playerBoard[i])
+    console.log(playerOrder)
+  }
+}
+
+checkWin()
