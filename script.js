@@ -9,6 +9,30 @@ const toppings = [
   { name: 'pasil', imageUrl: 'pic/pasil.png' }
 ]
 
+const pizza = []
+const toppingSelected = null
+const destinationSelected = null
+
+const generateRandomPizza = () => {
+  // loop through toppings
+  for (let i = 0; i < toppings.length; i++) {
+    const randomTopping = Math.floor(Math.random() * toppings.length)
+  }
+  // Generate random index
+  // Place toppings element in the loop inside grid[randomIndex]
+}
+
+const showPizza = () => {
+  // Show final pizza for a moment
+}
+
+const addEventListeners = () => {
+  // Add click event listeners to all the pizza cells
+  // Add click event listeners to all the toppings
+}
+
+// ==================================================
+
 // Function that generate an array of each topping img
 const toppingsContainer = document.getElementById('toppingsContainer')
 function toppingsContainerArray() {
