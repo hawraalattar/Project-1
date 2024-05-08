@@ -81,11 +81,11 @@ function checkWin() {
   console.log(playerOrder)
   // for loop
   for (let index = 0; index < playerOrder.length; index++) {
-    // if two elements are not equal change value of returnValue to false
+    // if two elements are not equal return a value of false
     if (playerOrder[index] !== finalImgOrder[index]) {
       return false
     }
-    // end of for loop return returnValue
   }
+  // end of for loop return return true
   return true
 }
