@@ -9,6 +9,7 @@ body {
 .levels {
   display: flex;
   text-align: center;
+  margin-bottom: 10vh;
 }
 
 #level_1,
@@ -36,4 +37,21 @@ body {
   transform: translateY(-10px);
   background-color: rgb(65, 39, 25);
   color: aliceblue;
+}
+
+#board {
+  width: 360px;
+  height: 360px;
+  background-color: rgba(74, 54, 43, 0.158);
+
+  border: 10px solid rgb(74, 54, 43);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#board img {
+  width: 118px;
+  height: 118px;
+  border: 1px solid rgb(74, 54, 43);
 }
