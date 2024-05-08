@@ -17,6 +17,11 @@ const finalImgOrder = [
 ]
 let puzzleOrder = ['4', '6', '2', '8', '5', '3', '1', '9', '7']
 
+// Start the game by showing the board ---> change display to flex
+function startGame() {
+  document.getElementById('board').style.display = 'flex'
+}
+
 // Loading the puzzle board
 for (let r = 0; r < rows; r++) {
   for (let c = 0; c < columns; c++) {
@@ -37,7 +42,6 @@ for (let r = 0; r < rows; r++) {
     puzzle.addEventListener('drop', dropPuz)
     puzzle.addEventListener('dragend', dragEnd)
 
-    console.log(checkWin())
     // Append
     document.getElementById('board').append(puzzle)
   }
@@ -89,3 +93,6 @@ function checkWin() {
   // end of for loop return return true
   return true
 }
+
+// When level-1 clicked show the game board
+document.getElementById('level_1').addEventListener('click', startGame)
